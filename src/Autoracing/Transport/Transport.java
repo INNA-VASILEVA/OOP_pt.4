@@ -98,4 +98,6 @@ public abstract class Transport implements Competion {
     public abstract void bestLapTime();
 
     public abstract void maxSpeed();
+
+    public abstract void printTypes ();
 }
