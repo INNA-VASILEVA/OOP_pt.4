@@ -54,4 +54,10 @@ public class Bus<D extends DriverD & Move> extends Transport {
             System.out.println("Вместимость автобуса от " + capacity.getFrom() + " мест " + " до " + capacity.getTo() + " мест");
         }
     }
+
+    @Override
+    public boolean checkVehicles() {
+        System.out.println("Автобус" + getBrand() + " " + getModel() + " в диагностике не нуждается");
+        return true;
+    }
 }

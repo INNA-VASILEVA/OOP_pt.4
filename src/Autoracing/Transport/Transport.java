@@ -1,7 +1,9 @@
 package Autoracing.Transport;
+
 import Autoracing.Competion;
 import Autoracing.Driver.Driver;
 import Autoracing.Driver.Move;
+
 import java.util.Objects;
 
 public abstract class Transport implements Competion {
@@ -65,6 +67,8 @@ public abstract class Transport implements Competion {
         }
     }
 
+
+
     public void startMotion() {
         System.out.println(getBrand() + " " + getModel() + " начал движение ");
     }
@@ -99,5 +103,7 @@ public abstract class Transport implements Competion {
 
     public abstract void maxSpeed();
 
-    public abstract void printTypes ();
+    public abstract void printTypes();
+
+    public abstract boolean checkVehicles();
 }

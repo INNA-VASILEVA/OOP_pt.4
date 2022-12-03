@@ -84,5 +84,10 @@ public class Truck<C extends DriverC & Move> extends Transport {
             System.out.println("Грузоподьемность " + from + " тонн " + to + " тонн");
         }
     }
+    @Override
+    public boolean checkVehicles() {
+        System.out.println(getBrand() + " " + getModel() + " прошел диагностику");
+        return true;
+    }
 }
-// "Грузоподьемность от " + weight.getFrom() + " тонн " + " до " + weight.getTo()
+

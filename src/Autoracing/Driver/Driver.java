@@ -8,7 +8,7 @@ public abstract class Driver {
     public Driver(String name, double experience) {
         if (name == null || name.isEmpty()) this.name = " Имя не указано ";
         else this.name = name;
-        this.driverCard = null;
+        this.driverCard = driverCard;
         this.experience = Math.max(experience, 0.5);
     }
 
@@ -25,6 +25,9 @@ public abstract class Driver {
     }
 
     public void setDriverCard(String driverCard) {
+       if(driverCard ==null){
+            throw new IllegalArgumentException("необходимо указать категорию прав");
+        }
         this.driverCard = driverCard;
     }
 

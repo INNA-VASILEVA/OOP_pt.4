@@ -65,6 +65,12 @@ public class Car<B extends DriverB & Move> extends Transport {
     }
 
     @Override
+    public boolean checkVehicles() {
+        System.out.println(getBrand() + " " + getModel() + " прошел диагностику");
+        return true;
+    }
+
+    @Override
     public String toString() {
         return super.toString();
     }
