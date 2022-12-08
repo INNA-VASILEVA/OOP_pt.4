@@ -60,4 +60,9 @@ public class Bus<D extends DriverD & Move> extends Transport {
         System.out.println("Автобус" + getBrand() + " " + getModel() + " в диагностике не нуждается");
         return true;
     }
+
+    @Override
+    public void repairVehicles(){
+        System.out.println("Автобус " + getBrand() + getModel() + " отремонтирован");
+    }
 }

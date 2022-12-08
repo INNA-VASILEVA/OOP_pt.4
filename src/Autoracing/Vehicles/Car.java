@@ -69,6 +69,10 @@ public class Car<B extends DriverB & Move> extends Transport {
         System.out.println(getBrand() + " " + getModel() + " прошел диагностику");
         return true;
     }
+    @Override
+    public void repairVehicles(){
+        System.out.println("Машина " + getBrand() + getModel() + " отремонтирована");
+    }
 
     @Override
     public String toString() {

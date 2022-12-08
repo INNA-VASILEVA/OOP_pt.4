@@ -3,7 +3,12 @@ package Autoracing.Transport;
 import Autoracing.Competion;
 import Autoracing.Driver.Driver;
 import Autoracing.Driver.Move;
+import Autoracing.Mechanic.Mechanic;
+import Autoracing.Sponsor.Sponsor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport implements Competion {
@@ -11,6 +16,10 @@ public abstract class Transport implements Competion {
     private String brand;
     private String model;
     private double engineVolume;
+    private final List<Driver> drivers = new ArrayList<>();
+    private final List<Mechanic> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
+
 
 
     public Transport(String brand, String model, double engineVolume) {
@@ -67,7 +76,17 @@ public abstract class Transport implements Competion {
         }
     }
 
+    public List<Driver> getDrivers() {
+        return drivers;
+    }
 
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
 
     public void startMotion() {
         System.out.println(getBrand() + " " + getModel() + " начал движение ");
@@ -84,6 +103,18 @@ public abstract class Transport implements Competion {
 
     public String toString() {
         return this.brand + " модель " + this.model + " объем двигателя " + this.engineVolume + " л";
+    }
+
+    public void addDriver(Driver... drivers){
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+
+    public void addMechanic(Mechanic<?>... mechanics){
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+
+    public void addSponsor(Sponsor... sponsors){
+       this.sponsors.addAll(Arrays.asList(sponsors));
     }
 
     public boolean equals(Object obj) {
@@ -106,4 +137,6 @@ public abstract class Transport implements Competion {
     public abstract void printTypes();
 
     public abstract boolean checkVehicles();
+
+    public abstract void repairVehicles();
 }

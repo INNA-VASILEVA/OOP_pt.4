@@ -5,6 +5,7 @@ import Autoracing.Driver.Move;
 import Autoracing.Transport.*;
 import Autoracing.Weight;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Truck<C extends DriverC & Move> extends Transport {
@@ -88,6 +89,10 @@ public class Truck<C extends DriverC & Move> extends Transport {
     public boolean checkVehicles() {
         System.out.println(getBrand() + " " + getModel() + " прошел диагностику");
         return true;
+    }
+    @Override
+    public void repairVehicles(){
+        System.out.println("Грузовик " + getBrand() + getModel() + " отремонтирован");
     }
 }
 
